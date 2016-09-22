@@ -1,0 +1,17 @@
+  <h2 class="text-center"><%= @fact.title %></h2>
+  <h5 class="text-center"><%= @fact.created_at.strftime('%b %d, %Y') %></h5>
+
+  <div><%= raw @fact.context %></div>
+  <%= link_to "edit",edit_fact_path(@fact) %>| <%= link_to "delete", fact_path(@fact), method: :delete, data: {confirm: "Are you sure you want to delete this fact?"} %> | <%= link_to "back",facts_path %>
+
+<%if @fact.sources.count > 0 %>
+    <h2>Sources</h2>
+    <%= render @fact.sources.order("created_at DESC") %>
+<% end %>
+
+
+<h4>Site your Source:</h4>
+    <%= form_for [@fact, @fact.sources.build] do |s| %>
+        <%= s.text_field :source, placeholder:"Site your source"%>
+        <%=s.submit %>
+    <% end %>

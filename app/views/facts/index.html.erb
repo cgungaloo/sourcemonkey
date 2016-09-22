@@ -1,0 +1,27 @@
+<h1>Welcome to Source Monkey</h1>
+<%= link_to "About",about_path %>
+<%= form_tag facts_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search Fact", :name =>nil %>
+  </p>
+  <% end %>
+
+<%= link_to "Create New Fact",new_fact_path %>
+<div class="container">
+  <div class="col-sm-10 col-sm-offset-1 col-xs-12 blog-content">
+    <% @facts.each do |fact| %>
+    <div class="col-xs-12">
+      <div class="text-center">
+        <h2><%= fact.title %></h2>
+        <h6><%= fact.created_at.strftime('%b %d, %Y') %></h6>
+      </div>
+
+      <div class="text-center">
+        <%= link_to "READ MORE", fact_path(fact) %>
+      </div>
+      <br>
+    </div>
+    <% end %>
+  </div>
+</div>
