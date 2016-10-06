@@ -1,4 +1,8 @@
 <h1>Welcome to Source Monkey</h1>
+<% if current_user != nil %>
+<p><%= current_user.email %></p>
+<% end %>
+
 <%= link_to "About",about_path %>
 <%= form_tag facts_path, :method => 'get' do %>
   <p>

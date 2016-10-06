@@ -29,6 +29,8 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'bcrypt', '~> 3.1', '>= 3.1.11', require: "bcrypt"
+
 gem 'simple_form', '~> 3.2'
 gem 'bootstrap-sass', '~> 3.3'
 gem 'ckeditor', '~> 4.1'
