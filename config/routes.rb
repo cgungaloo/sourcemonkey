@@ -23,7 +23,7 @@ Rails.application.routes.draw do
 
   resources :users
 
-  get "/log-in" => "sessions#new"
+  get "/log-in" => "sessions#new", as: :login
   post "/log-in" => "sessions#create"
   get "/log-out" => "sessions#destroy", as: :log_out
 end

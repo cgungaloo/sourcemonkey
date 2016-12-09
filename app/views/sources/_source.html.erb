@@ -4,13 +4,15 @@
 <div class="panel panel-default">
   <div class="panel-body">
     <%=source.source %>
+    <div class = "<%=source.id %>">
     <% @upcount = pluralize(source.upvotes.count,"up vote") %>
     <% @downcount = pluralize(source.downvotes.count,"down vote") %>
-    <div id="count"><%= @upcount %></div>
-    <div id="countdown"><%= @downcount %></div>
+    <div class="count"><%= @upcount %></div>
+    <div class="countdown"><%= @downcount %></div>
     <%= button_to '+1', upvote_source_path(source), method: :post,remote: true %>
     <%= button_to '-1', downvote_source_path(source), method: :post,remote: true %>
     <p><%= link_to "delete", [source.fact, source], method: :delete, data:{confirm: "are you sure?"} %></p>
+    </div>
   </div>
 
 

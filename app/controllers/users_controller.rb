@@ -5,12 +5,11 @@ class UsersController < ApplicationController
  def create
  	@user =User.new(user_params)
  	if @user.save
- 		puts "Hello!!!!!!!!!"
- 		puts"Logged in as "+@user
- 		flash[:notice] ="Welcome to Source Monkey!"
+ 		puts"Logged in as " + @user.email
+ 		flash[:success] ="Welcome to Source Monkey!"
  		redirect_to "/"
  	else
- 		flash[:alert] ="There was a problem creating your account. Please try again."
+ 		flash[:danger] ="There was a problem creating your account. Please try again."
  		puts "Fail!!!!!!!!!"
  		redirect_to :back
  	end

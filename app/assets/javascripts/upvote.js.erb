@@ -1,7 +1,13 @@
-function upDateCount(count){
-	if(count =="1"){
-		document.getElementById('count').innerHTML =count  + " up vote";
+function upDateCount(upcount,downcount,id){
+	if(upcount =="1"){
+		document.getElementsByClassName(id)[0].getElementsByClassName('count')[0].innerHTML =upcount  + " up vote";
 	}else{
-		document.getElementById('count').innerHTML =count  + " up votes";
+		document.getElementsByClassName(id)[0].getElementsByClassName('count')[0].innerHTML =upcount  + " up votes";
+	}
+
+	if(downcount =="1"){
+		document.getElementsByClassName(id)[0].getElementsByClassName('countdown')[0].innerHTML =downcount  + " down vote";
+	}else{
+		document.getElementsByClassName(id)[0].getElementsByClassName('countdown')[0].innerHTML =downcount  + " down votes";
 	}
  }

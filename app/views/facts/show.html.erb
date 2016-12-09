@@ -2,7 +2,7 @@
   <h5 class="text-center"><%= @fact.created_at.strftime('%b %d, %Y') %></h5>
 
   <div><%= raw @fact.context %></div>
-  <%= link_to "edit",edit_fact_path(@fact) %>| <%= link_to "delete", fact_path(@fact), method: :delete, data: {confirm: "Are you sure you want to delete this fact?"} %> | <%= link_to "back",facts_path %>
+  <%= link_to "edit",edit_fact_path(@fact) %>| <%= link_to "delete", fact_path(@fact), method: :delete, data: {confirm: "Are you sure you want to delete this fact?"} %> | <%= link_to "Home",facts_path %>
 
 <%if @fact.sources.count > 0 %>
     <h2>Sources</h2>

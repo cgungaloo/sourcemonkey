@@ -1,7 +1,7 @@
-function upDateCountDown(count){
+function upDateCountDown(count,id){
 	if(count =="1"){
-		document.getElementById('countdown').innerHTML =count  + " down vote";
+		document.getElementsByClassName(id)[0].getElementsByClassName('countdown')[0].innerHTML =count  + " down vote";
 	}else{
-		document.getElementById('countdown').innerHTML =count  + " down votes";
+		document.getElementsByClassName(id)[0].getElementsByClassName('countdown')[0].innerHTML =count  + " down votes";
 	}
  }

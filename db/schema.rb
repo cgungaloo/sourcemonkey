@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160922184507) do
+ActiveRecord::Schema.define(version: 20161129213639) do
 
   create_table "ckeditor_assets", force: :cascade do |t|
     t.string   "data_file_name",               null: false
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20160922184507) do
     t.integer  "source_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
 
   create_table "facts", force: :cascade do |t|
@@ -38,6 +39,7 @@ ActiveRecord::Schema.define(version: 20160922184507) do
     t.text     "context"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
 
   create_table "sources", force: :cascade do |t|
@@ -45,6 +47,7 @@ ActiveRecord::Schema.define(version: 20160922184507) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "fact_id"
+    t.integer  "user_id"
     t.index ["fact_id"], name: "index_sources_on_fact_id"
   end
 
@@ -52,6 +55,7 @@ ActiveRecord::Schema.define(version: 20160922184507) do
     t.integer  "source_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
 
   create_table "users", force: :cascade do |t|
